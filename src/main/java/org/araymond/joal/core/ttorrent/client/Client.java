@@ -162,6 +162,11 @@ public class Client implements TorrentFileChangeAware, ClientFacade {
             this.torrentFileProvider.moveToArchiveFolder(infoHash);
         }
     }
+        public void onMoreLeenchers(final InfoHash infoHash) {
+        if (!this.appConfiguration.shouldKeepTorrentWithZeroLeechers()) {
+            this.torrentFileProvider.moveToArchiveFolder(infoHash);
+        }
+    }
 
     public void onTorrentHasStopped(final Announcer stoppedAnnouncer) {
         if (this.stop) {
