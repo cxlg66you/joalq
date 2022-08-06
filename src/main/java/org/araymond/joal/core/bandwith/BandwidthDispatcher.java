@@ -160,7 +160,7 @@ public class BandwidthDispatcher implements BandwidthDispatcherFacade, Runnable 
             this.randomSpeedProvider.refresh();
             this.recomputeSpeeds();
             if (logger.isDebugEnabled()) {
-                logger.debug("Global bandwidth refreshed, new value is {}", FileUtils.byteCountToDisplaySize(this.randomSpeedProvider.getInBytesPerSeconds()));
+                logger.debug("Global bandwidtwh refreshed, new value is {}", FileUtils.byteCountToDisplaySize(this.randomSpeedProvider.getInBytesPerSeconds()));
             }
         } finally {
             this.lock.writeLock().unlock();
