@@ -58,6 +58,7 @@ public class ClientNotifierTest {
     // @SuppressWarnings("ResultOfMethodCallIgnored")
     // @Test
     
+
     // public void shouldDoNothingIfAnnounceStartedHasPeers() {
     //     final Client client = mock(Client.class);
 
