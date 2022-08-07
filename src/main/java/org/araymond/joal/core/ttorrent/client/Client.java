@@ -163,7 +163,7 @@ public class Client implements TorrentFileChangeAware, ClientFacade {
         }
     }
         public void onMoreLeenchers(final InfoHash infoHash) {
-        if (this.appConfiguration.shouldKeepTorrentWithZeroLeechers()) {
+        if (!this.appConfiguration.shouldKeepTorrentWithZeroLeechers()) {
             this.torrentFileProvider.moveToArchiveFolder(infoHash);
         }
     }
