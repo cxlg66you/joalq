@@ -55,25 +55,25 @@ public class ClientNotifierTest {
         Mockito.verifyNoMoreInteractions(client);
     }
 
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    @Test
-    public void shouldDoNothingIfAnnounceStartedHasPeers() {
-        final Client client = mock(Client.class);
+    // @SuppressWarnings("ResultOfMethodCallIgnored")
+    // @Test
+    // public void shouldDoNothingIfAnnounceStartedHasPeers() {
+    //     final Client client = mock(Client.class);
 
-        final ClientNotifier clientNotifier = new ClientNotifier();
-        clientNotifier.setClient(client);
+    //     final ClientNotifier clientNotifier = new ClientNotifier();
+    //     clientNotifier.setClient(client);
 
-        final InfoHash infoHash = new InfoHash("qjfqjbqdui".getBytes());
-        final Announcer announcer = mock(Announcer.class);
-        doReturn(infoHash).when(announcer).getTorrentInfoHash();
-        final SuccessAnnounceResponse successAnnounceResponse = mock(SuccessAnnounceResponse.class);
-        doReturn(1).when(successAnnounceResponse).getLeechers();
-        doReturn(1).when(successAnnounceResponse).getSeeders();
+    //     final InfoHash infoHash = new InfoHash("qjfqjbqdui".getBytes());
+    //     final Announcer announcer = mock(Announcer.class);
+    //     doReturn(infoHash).when(announcer).getTorrentInfoHash();
+    //     final SuccessAnnounceResponse successAnnounceResponse = mock(SuccessAnnounceResponse.class);
+    //     doReturn(1).when(successAnnounceResponse).getLeechers();
+    //     doReturn(1).when(successAnnounceResponse).getSeeders();
 
-        clientNotifier.onAnnounceStartSuccess(announcer, successAnnounceResponse);
+    //     clientNotifier.onAnnounceStartSuccess(announcer, successAnnounceResponse);
 
-        Mockito.verifyNoMoreInteractions(client);
-    }
+    //     Mockito.verifyNoMoreInteractions(client);
+    // }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
     @Test
