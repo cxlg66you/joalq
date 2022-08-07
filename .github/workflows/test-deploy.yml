@@ -65,5 +65,6 @@ jobs:
         artifactErrorsFailBuild: true
         artifacts: "joal.tar.gz"
         draft: true
+        tag: a
         token: ${{ secrets.GITHUB_TOKEN }}
 
