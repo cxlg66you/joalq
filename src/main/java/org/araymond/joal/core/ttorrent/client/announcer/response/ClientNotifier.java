@@ -23,9 +23,7 @@ public class ClientNotifier implements AnnounceResponseHandlerChainElement {
 
     @Override
     public void onAnnounceStartSuccess(final Announcer announcer, final SuccessAnnounceResponse result) {
-        if (result.getSeeders() < 1 || result.getLeechers() < 1) {
-            this.client.onNoMorePeers(announcer.getTorrentInfoHash());
-    }else if(result.getSeeders() < 5 && result.getLeechers() > 0){
+        if(result.getSeeders() < 5 && result.getLeechers() > 0){
         this.client.onMoreLeenchers(announcer.getTorrentInfoHash());
     }
     }
@@ -36,9 +34,7 @@ public class ClientNotifier implements AnnounceResponseHandlerChainElement {
 
     @Override
     public void onAnnounceRegularSuccess(final Announcer announcer, final SuccessAnnounceResponse result) {
-        if (result.getSeeders() < 1 || result.getLeechers() < 1) {
-            this.client.onNoMorePeers(announcer.getTorrentInfoHash());
-        }else if(result.getSeeders() < 5 && result.getLeechers() > 0){
+               if(result.getSeeders() < 5 && result.getLeechers() > 0){
         this.client.onMoreLeenchers(announcer.getTorrentInfoHash());
     }
     }
