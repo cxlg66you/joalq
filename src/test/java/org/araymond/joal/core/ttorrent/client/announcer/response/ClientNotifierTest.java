@@ -64,7 +64,7 @@ public class ClientNotifierTest {
     //     clientNotifier.setClient(client);
 
     //     final InfoHash infoHash = new InfoHash("qjfqjbqdui".getBytes());
-    //     final Announcer announcer = mock(Announcer.class);
+    //     final Announcer wannouncer = mock(Announcer.class);
     //     doReturn(infoHash).when(announcer).getTorrentInfoHash();
     //     final SuccessAnnounceResponse successAnnounceResponse = mock(SuccessAnnounceResponse.class);
     //     doReturn(1).when(successAnnounceResponse).getLeechers();
