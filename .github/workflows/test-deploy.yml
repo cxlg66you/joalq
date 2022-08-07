@@ -56,14 +56,19 @@ jobs:
         mkdir packager-tmp && cp -r resources/* ./packager-tmp && cp target/*.jar ./packager-tmp
         cd ./packager-tmp && tar -czvf joal.tar.gz * && mv ./joal.tar.gz ../ && cd ..
 
+    
     - name: Create Github release
+    
       uses: ncipollo/release-action@v1.8.6
       with:
         allowUpdates: true
         artifactErrorsFailBuild: true
         artifacts: "joal.tar.gz"
         draft: true
+        tag: AutoUpdate
+
         token: ${{ secrets.GITHUB_TOKEN }}
+    
 
   docker:
     needs: test
