@@ -77,25 +77,25 @@ public class ClientNotifierTest {
     //     Mockito.verifyNoMoreInteractions(client);
     // }
 
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    @Test
-    public void shouldNotifyNoMorePeersIfAnnounceRegularResponseHasNoLeechers() {
-        final Client client = mock(Client.class);
+    // @SuppressWarnings("ResultOfMethodCallIgnored")
+    // @Test
+    // public void shouldNotifyNoMorePeersIfAnnounceRegularResponseHasNoLeechers() {
+    //     final Client client = mock(Client.class);
 
-        final ClientNotifier clientNotifier = new ClientNotifier();
-        clientNotifier.setClient(client);
+    //     final ClientNotifier clientNotifier = new ClientNotifier();
+    //     clientNotifier.setClient(client);
 
-        final InfoHash infoHash = new InfoHash("qjfqjbqdui".getBytes());
-        final Announcer announcer = mock(Announcer.class);
-        doReturn(infoHash).when(announcer).getTorrentInfoHash();
-        final SuccessAnnounceResponse successAnnounceResponse = mock(SuccessAnnounceResponse.class);
-        doReturn(0).when(successAnnounceResponse).getLeechers();
-        doReturn(100).when(successAnnounceResponse).getSeeders();
-        clientNotifier.onAnnounceRegularSuccess(announcer, successAnnounceResponse);
+    //     final InfoHash infoHash = new InfoHash("qjfqjbqdui".getBytes());
+    //     final Announcer announcer = mock(Announcer.class);
+    //     doReturn(infoHash).when(announcer).getTorrentInfoHash();
+    //     final SuccessAnnounceResponse successAnnounceResponse = mock(SuccessAnnounceResponse.class);
+    //     doReturn(0).when(successAnnounceResponse).getLeechers();
+    //     doReturn(100).when(successAnnounceResponse).getSeeders();
+    //     clientNotifier.onAnnounceRegularSuccess(announcer, successAnnounceResponse);
 
-        Mockito.verify(client, times(1)).onNoMorePeers(infoHash);
-        Mockito.verifyNoMoreInteractions(client);
-    }
+    //     Mockito.verify(client, times(1)).onNoMorePeers(infoHash);
+    //     Mockito.verifyNoMoreInteractions(client);
+    // }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
     @Test
