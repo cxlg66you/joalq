@@ -57,12 +57,13 @@ public class ClientNotifierTest {
 
     // @SuppressWarnings("ResultOfMethodCallIgnored")
     // @Test
+    
     // public void shouldDoNothingIfAnnounceStartedHasPeers() {
     //     final Client client = mock(Client.class);
 
     //     final ClientNotifier clientNotifier = new ClientNotifier();
     //     clientNotifier.setClient(client);
-
+  
     //     final InfoHash infoHash = new InfoHash("qjfqjbqdui".getBytes());
     //     final Announcer announcer = mock(Announcer.class);
     //     doReturn(infoHash).when(announcer).getTorrentInfoHash();
